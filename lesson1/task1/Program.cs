@@ -10,9 +10,9 @@ int square = number1 * number1;
 Console.WriteLine("Number 1's square is " + square);
 if (square == number2)
 {
-    Console.WriteLine("Number 2 is Number 1's square");
+    Console.WriteLine(number2 + " is " + number1 + "'s square");
 }
 else
 {
-    Console.WriteLine("Number 2 is NOT Number 1's square");
+    Console.WriteLine(number2 + " is NOT " + number1 + "'s square");
 }
