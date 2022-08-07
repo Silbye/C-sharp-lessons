@@ -19,14 +19,12 @@ if(number2 > max)
     {
         max = number3;
     }
-    Console.Write("Max number is " + max);
 }
 else
 {
     if(number3>max)
     {
         max = number3;
-        Console.Write("Max number is " + max);
     }
-    Console.Write("Max number is " + max);
 }
+Console.Write("Max number is " + max);
