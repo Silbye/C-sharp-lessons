@@ -27,8 +27,7 @@
     return maxNumber;
 }
 
-int numbrer = getMaxNumberRandomValue();
-Console.WriteLine(numbrer);
+getMaxNumberRandomValue();
 
 
 
