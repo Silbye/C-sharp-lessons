@@ -8,8 +8,15 @@ int number2 = Convert.ToInt32(Console.ReadLine());
 
 int max = number1;
 
-if(number2 > number1)
+if (number1 == number2)
 {
-    max = number2;
+    Console.WriteLine("The numbers are equal!");
 }
-Console.WriteLine("Max number is " + max);
+else
+{
+    if (number2 > number1)
+    {
+        max = number2;
+    }
+    Console.WriteLine("Max number is " + max);
+}
