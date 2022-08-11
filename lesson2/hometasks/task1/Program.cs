@@ -8,8 +8,7 @@
 
     if (number > 100 & number < 1000)
     {
-        secondDigit = number % 100;
-        secondDigit/=10;
+        secondDigit = (number % 100) / 10;
         Console.WriteLine("The second digit of your number is - " + secondDigit);
     }
     else
