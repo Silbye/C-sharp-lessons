@@ -6,7 +6,7 @@
     int number = Convert.ToInt32(Console.ReadLine());
     string thirdDigit = number.ToString();
 
-    if (number > 100)
+    if (number >= 100)
     {
         Console.WriteLine("The third digit of your number is - " + thirdDigit[2]);
     }
