@@ -1,14 +1,16 @@
 ﻿Console.Clear();
 Console.Write("Enter your number: ");
 int N = Convert.ToInt32(Console.ReadLine());
-int number = 0;
 string result = "";
 
 string getSquares(int N){
-    while(number <= N){
-        result+=Math.Pow(N, number)+", ";
-        number++;
+    for(int i=0;i<=N;i++){
+        result+=Math.Pow(N, i)+", ";
     }
+    //while(number <= N){
+        //result+=Math.Pow(N, number)+", ";
+      //  number++;
+    //}
     return result;
 }
 
