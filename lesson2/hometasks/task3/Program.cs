@@ -1,24 +1,23 @@
-﻿void weekendFinder()
+﻿Console.Clear();
+
+Console.Write("Enter your day: ");
+int day = Convert.ToInt32(Console.ReadLine());
+
+bool weekendFinder(int day)
 {
-    Console.Clear();
-
-    Console.Write("Enter your day: ");
-    int day = Convert.ToInt32(Console.ReadLine());
-
     if (day > 0 & day < 8)
     {
         if (day == 6 || day == 7)
         {
-            Console.WriteLine("Your day is weekend!");
+            return true;
         }
         else
         {
-            Console.WriteLine("Your day is NOT weekend!");
+            return false;
         }
     }
-    else
-    {
-        Console.WriteLine("There is no such day in the week!");
-    }
+    throw new Exception ("there is no such day");
 }
-weekendFinder();
+
+bool display = weekendFinder(day);
+Console.WriteLine(display);
