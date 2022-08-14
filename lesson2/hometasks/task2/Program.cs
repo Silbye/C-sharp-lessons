@@ -1,18 +1,21 @@
-﻿void findThirdDigit()
+﻿Console.Clear();
+
+Console.Write("Enter your Number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+int findThirdDigit(int number)
 {
-    Console.Clear();
-
-    Console.Write("Enter your Number: ");
-    int number = Convert.ToInt32(Console.ReadLine());
-    string thirdDigit = number.ToString();
-
     if (number >= 100)
     {
-        Console.WriteLine("The third digit of your number is - " + thirdDigit[2]);
+        while (number >= 1000)
+        {
+            number /= 10;
+        }
+        int thirdDigit = number % 10 % 10;
+        return thirdDigit;
     }
-    else
-    {
-        Console.WriteLine("Your number does NOT have at least 3 digits");
-    }
+    throw new Exception("Number must have at least 3 digits");
 }
-findThirdDigit();
+
+int display = findThirdDigit(number);
+Console.WriteLine(display);
