@@ -1,15 +1,23 @@
 ﻿Console.Clear();
 Console.Write("Enter your number: ");
-string Number = Console.ReadLine();
+int Number = Convert.ToInt32(Console.ReadLine());
+string NumberReverse = Number.ToString();
 
-bool checkPalindrom(string Number){
-    if(Number.Reverse().SequenceEqual(Number)){
-        return true;
+bool checkPalindrom(int Number, string NumberReverse)
+{
+    if (Number >= 10000 && Number < 100000)
+    {
+        if (NumberReverse.Reverse().SequenceEqual(NumberReverse))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    else{
-        return false;
-    }
+    throw new Exception ("Number is not 5 digits");
 }
 
-bool display = checkPalindrom(Number);
+bool display = checkPalindrom(Number, NumberReverse);
 Console.WriteLine(display);
