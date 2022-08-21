@@ -1,7 +1,7 @@
 ﻿Console.Clear();
 int[] array = new int[8];
 
-string writeArray(int[] array){
+string WriteArray(int[] array){
     
     Console.WriteLine("Enter your array numbers: ");
     string result = "";
@@ -11,5 +11,5 @@ string writeArray(int[] array){
     }
     return result;
 }
-string display = writeArray(array);
+string display = WriteArray(array);
 Console.WriteLine(display);
