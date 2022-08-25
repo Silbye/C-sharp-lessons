@@ -1,26 +1,24 @@
 ﻿Console.Clear();
 int[] array = new int[10];
 
-string PrintArray(int[] array){
-    string result = "";
+void PrintArray(int[] array){
     for(int i = 0; i<array.Length; i++){
         array[i] = new Random().Next(-100, 101);
-        result+=array[i]+" ";
+        Console.Write(array[i]+" ");
     }
-    return result;
 }
 
 int FindUnevenIndexNumberSumm(int[] array)
 {
     int summ = 0;
     for(int i = 0; i<array.Length; i++){
-        if(i % 2 == 1){
+        if(i % 2 != 0){
             summ+=array[i];
         }
     }
     return summ;
 }
-string display = PrintArray(array);
+PrintArray(array);
+Console.WriteLine();
 int display2 = FindUnevenIndexNumberSumm(array);
-Console.WriteLine(display);
 Console.WriteLine(display2);
