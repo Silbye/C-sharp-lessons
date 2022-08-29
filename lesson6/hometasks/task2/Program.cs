@@ -1,21 +1,29 @@
 ﻿Console.Clear();
-Console.Write("Enter k1: ");
-double k1 = Convert.ToDouble(Console.ReadLine());
-Console.Write("Enter k2: ");
-double k2 = Convert.ToDouble(Console.ReadLine());
-Console.Write("Enter b1: ");
-double b1 = Convert.ToDouble(Console.ReadLine());
-Console.Write("Enter b2: ");
-double b2 = Convert.ToDouble(Console.ReadLine());
+double[] k = new double[2];
+double[] b = new double[2];
 
-string FindPoint(double k1, double k2, double b1, double b2){
-    double x = -(b1-b2)/(k1-k2);
-    double y = k1*x+b1;
+void WriteVarieables(double[] k, double[] b){
+    for(int i = 0; i<k.Length; i++){
+        Console.Write("Enter your k array member: ");
+        k[i] = Convert.ToDouble(Console.ReadLine());
+    }
+    Console.WriteLine();
+    for(int j = 0; j<b.Length; j++){
+        Console.Write("Enter your b array member: ");
+        b[j] = Convert.ToDouble(Console.ReadLine());
+    }
+}
+
+WriteVarieables(k,b);
+
+string FindPoint(double[] k, double[] b){
+    double x = -(b[0]-b[1])/(k[0]-k[1]);
+    double y = k[0]*x+b[0];
     x = Math.Round(x, 2);
     y = Math.Round(y, 2);
     string result = $"{x}; {y}";
     return result;
 }
 
-string display = FindPoint(k1, k2, b1, b2);
+string display = FindPoint(k, b);
 Console.WriteLine(display);
