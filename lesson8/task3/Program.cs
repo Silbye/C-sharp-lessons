@@ -43,4 +43,4 @@ for (int i = 0; i < array.GetLength(0); i++){
     }
 }
 foreach (var pair in numbers)
-    Console.WriteLine($"Number {pair.Key} was found {pair.Value} times");
+Console.WriteLine($"Number {pair.Key} was found {pair.Value} times");
