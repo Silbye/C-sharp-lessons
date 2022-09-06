@@ -9,7 +9,6 @@ int[] DetermineArraySize(){
     return size;
 }
 
-HashSet<int> numbers = new HashSet<int>();
 Random random = new Random();
 
 void CheckIfUniquePossible(int[] size){
@@ -22,11 +21,20 @@ void CheckIfUniquePossible(int[] size){
     }
 }
 
-int GenerateUniqueNumber(){
+int GenerateUniqueNumber(int[,,] array){
     while(true){
         int number = random.Next(10, 100);
-        if(!numbers.Contains(number)){
-            numbers.Add(number);
+        int count = 0;
+        for(int i = 0; i<array.GetLength(0); i++){
+            for(int j = 0; j<array.GetLength(1); j++){
+                for(int k = 0; k<array.GetLength(2); k++){
+                    if(array[i, j, k] == number){
+                        count++;
+                    }
+                }
+            }
+        }
+        if(count == 0){
             return number;
         }
     }
@@ -36,7 +44,7 @@ void CreateArray(int[,,] array){
     for(int i = 0; i<array.GetLength(0); i++){
         for(int j = 0; j<array.GetLength(1); j++){
             for(int k = 0; k<array.GetLength(2); k++){
-                array[i, j, k] = GenerateUniqueNumber();
+                array[i, j, k] = GenerateUniqueNumber(array);
             }
         }
     }
