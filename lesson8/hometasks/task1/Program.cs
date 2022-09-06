@@ -32,16 +32,33 @@ CreateArray(array);
 PrintArray(array);
 Console.WriteLine();
 
+int[] SortRow(int[] array){
+    for (int i = 0; i < array.Length-1; i++)
+    {
+        int max = i;
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] > array[max])
+            {
+                max = j;
+            }
+        }
+        int temp = array[i];
+        array[i] = array[max];
+        array[max] = temp;
+    }
+    return array;
+}
+
 int[,] SortArray(int[,] array){
-    int[] sortedRow = new int[array.GetLength(0)];
+    int[] sortedRow = new int[array.GetLength(1)];
     for(int i = 0; i<array.GetLength(0); i++){
         for(int j = 0; j<array.GetLength(1); j++){
             for(int k = 0; k<sortedRow.Length; k++){
                 sortedRow[k] = array[i,k];
             }
         }
-        Array.Sort(sortedRow);
-        Array.Reverse(sortedRow);
+        SortRow(sortedRow);
         for(int k = 0; k<sortedRow.Length; k++){
             array[i, k] = sortedRow[k];
         }
